@@ -32,9 +32,9 @@ const Home = () => {
         <div className="row">
             <h1>This is home</h1>
 
-            {
+            {/* {
                 tasks.map(task => <Task task={task}></Task>)
-            }
+            } */}
         </div>
     );
 };
