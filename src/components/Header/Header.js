@@ -15,8 +15,8 @@ const Header = () => {
                     <Nav.Link href="#pricing">Events</Nav.Link>
                     <Nav.Link href="#pricing">Blog</Nav.Link>
 
-                    <Button variant="primary" className="mr-sm-2" >Search</Button>
-                    <Button variant="dark" className="mr-sm-2" >Admin</Button>
+                    <Button variant="primary" className="mr-sm-2" id="btn-search">Search</Button>
+                    <Button variant="dark" className="mr-sm-2" id="btn-admin">Admin</Button>
                 </Nav>
 
             </Navbar>
