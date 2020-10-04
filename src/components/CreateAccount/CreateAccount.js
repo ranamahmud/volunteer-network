@@ -42,13 +42,16 @@ const CreateAccount = () => {
         }
 
     }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
     return (
         <Container>
             <Row id="create-logo">
                 <Image src={require("../../logos/Group 1329.png")} />
             </Row>
             <Row id="create-form">
-                <Form >
+                <Form onSubmit={handleSubmit}>
 
                     <div id="create-form-item">
                         <p>
@@ -56,13 +59,13 @@ const CreateAccount = () => {
     </p>
                         <Form.Group controlId="formBasicName">
 
-                            <Form.Control type="text" placeholder="Full Name" />
+                            <Form.Control type="text" placeholder="Full Name" onBlur={handleBlur} required />
 
                         </Form.Group>
 
                         <Form.Group controlId="formBasicEmail">
 
-                            <Form.Control type="email" placeholder="Username or Email" />
+                            <Form.Control type="email" placeholder="Username or Email" onBlur={handleBlur} required />
 
                         </Form.Group>
                         <Form.Group controlId="formBasicDate">
@@ -72,12 +75,12 @@ const CreateAccount = () => {
                         </Form.Group>
                         <Form.Group controlId="formBasicDescription">
 
-                            <Form.Control type="email" placeholder="Description" />
+                            <Form.Control type="text" placeholder="Description" onBlur={handleBlur} required />
 
                         </Form.Group>
                         <Form.Group controlId="formBasicTask">
 
-                            <Form.Control type="email" placeholder="Organize books at the library." />
+                            <Form.Control type="text" placeholder="Organize books at the library." onBlur={handleBlur} required />
 
                         </Form.Group>
 
