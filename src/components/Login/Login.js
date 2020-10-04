@@ -1,41 +1,66 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form, Image, Row } from 'react-bootstrap';
 import './Login.css'
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from '../../firebaseConfig';
+import { UserContext } from '../../App';
+
+export const initializeLoginFramework = () => {
+    if (firebase.apps.length === 0) {
+        firebase.initializeApp(firebaseConfig);
+    }
+}
+
 const Login = () => {
+    if (firebase.apps.length === 0) {
+        firebase.initializeApp(firebaseConfig);
+    }
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const googleSignIn = (e) => {
+        const googleProvider = new firebase.auth.GoogleAuthProvider();
+        return firebase.auth().signInWithPopup(googleProvider)
+            .then(res => {
+                const { displayName, photoURL, email } = res.user;
+                const signedInUser = {
+                    isSignedIn: true,
+                    name: displayName,
+                    email: email,
+                    photo: photoURL,
+                    success: true
+                };
 
-    const handleSubmit = (e) => {
-        // if (newUser && user.email && user.password) {
-        //     createUserWithEmailAndPassword(user.name, user.email, user.password)
-        //         .then(res => {
-        //             handleResponse(res, true);
-        //         })
-        // }
+                console.log(signedInUser)
+                setLoggedInUser(signedInUser);
 
-        // if (!newUser && user.email && user.password) {
-        //     signInWithEmailAndPassword(user.email, user.password)
-        //         .then(res => {
-        //             handleResponse(res, true);
-        //         })
-        // }
-        console.log("form clicked")
+
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(err.message);
+            })
+
         e.preventDefault();
     }
+
+
     return (
+
         <Container>
             <Row id="login-logo">
                 <Image src={require("../../logos/Group 1329.png")} />
             </Row>
             <Row id="login-form">
-                <Form onSubmit={handleSubmit}>
+                <Form >
 
                     <div id="login-form-item">
                         <p>
                             Login with
     </p>
-                        <Button variant="light" type="submit">
+                        <button variant="light" type="button" onClick={googleSignIn}>
                             <img src={require("../../logos/google.png")} alt="" />
                             Continue with Google
-  </Button>
+  </button>
                         <h1>Don’t have an account? Create an account</h1>
                     </div>
                 </Form>

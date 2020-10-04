@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home/Home';
@@ -18,10 +18,13 @@ import CreateAccount from './components/CreateAccount/CreateAccount';
 import EventTasks from './components/EventTasks/EventTasks';
 import Admin from './components/Admin/Admin';
 import AddAdmin from './components/AddAdmin/AddAdmin';
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
-    <div className="App">
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -32,7 +35,8 @@ function App() {
           <Route path="/admin-add" component={AddAdmin} />
         </Switch>
       </Router>
-    </div >
+    </UserContext.Provider>
+
   );
 }
 
