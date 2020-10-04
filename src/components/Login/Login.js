@@ -1,11 +1,25 @@
 import React from 'react';
-import { Container, Image } from 'react-bootstrap';
+import { Button, Container, Form, Image, Row } from 'react-bootstrap';
 import './Login.css'
 const Login = () => {
     return (
         <Container>
-            <Image id="login-logo" src={require("../../logos/Group 1329.png")} />
-            <p>Login With</p>
+            <Row id="login-logo">
+                <Image src={require("../../logos/Group 1329.png")} />
+            </Row>
+            <Row id="login-form">
+                <Form >
+
+                    <div id="login-form-item">
+                        <p>
+                            Login with
+    </p>
+                        <Button variant="light" type="submit">
+                            Continue with Google
+  </Button>
+                    </div>
+                </Form>
+            </Row>
         </Container>
     );
 };

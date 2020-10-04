@@ -1,8 +1,57 @@
 #login-logo {
-    position: absolute;
+    padding-top: 44px;
+}
+
+#login-logo img {
+    /* position: absolute; */
     width: 202.81px;
     height: 60px;
     left: 575px;
-    top: 44px;
+
+    margin: 0 auto;
+}
+
+#login-form {
+    padding-top: 104px;
+}
+
+#login-form form {
+    /* position: absolute; */
+    width: 570px;
+    height: 457px;
+    padding-top: 154px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 1px solid #ABABAB;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+
+}
+
+.container {
+    border: 1px solid red;
+}
+
+#login-form-item {
+    border: 1px solid blue;
+    width: 457px;
+    height: 148px;
+    margin-left: 56px;
+}
+
+#login-form-item p {
+    height: 29px;
+    left: 45%;
+    right: 45.28%;
+    top: 325px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
 
 }
