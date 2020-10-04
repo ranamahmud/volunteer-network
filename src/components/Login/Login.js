@@ -31,7 +31,7 @@ const Login = () => {
                 const { displayName, photoURL, email } = res.user;
                 const signedInUser = {
                     isSignedIn: true,
-                    name: displayName,
+                    userName: displayName,
                     email: email,
                     photo: photoURL,
                     success: true
@@ -39,8 +39,9 @@ const Login = () => {
 
                 console.log(signedInUser)
                 setLoggedInUser(signedInUser);
-                console.log(from)
                 history.replace(from);
+                // history.push(path, [state])
+
 
 
             })
