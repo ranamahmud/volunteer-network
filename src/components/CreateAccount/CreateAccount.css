@@ -1,92 +1,91 @@
 #create-logo {
-    padding-top: 44px;
+  padding-top: 44px;
 }
 
 #create-logo img {
-    /* position: absolute; */
-    width: 202.81px;
-    height: 60px;
-    left: 575px;
+  /* position: absolute; */
+  width: 202.81px;
+  height: 60px;
+  left: 575px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 #create-form {
-    padding-top: 104px;
+  padding-top: 104px;
 }
 
 #create-form form {
-    /* position: absolute; */
-    width: 570px;
-    height: 591px;
+  /* position: absolute; */
+  width: 570px;
+  height: 591px;
 
-    padding-top: 154px;
-    margin: 0 auto;
-    background: #FFFFFF;
-    border: 1px solid #ABABAB;
-    box-sizing: border-box;
-    border-radius: 4px;
-
-
+  padding-top: 154px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #ababab;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
-
 #create-form-item {
-    width: 457px;
-    height: 148px;
-    margin-left: 56px;
+  width: 457px;
+  height: 148px;
+  margin-left: 56px;
 }
 
 #create-form-item p {
-    height: 29px;
-    left: 45%;
-    right: 45.28%;
-    top: 325px;
+  height: 29px;
+  left: 45%;
+  right: 45.28%;
+  top: 325px;
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
 
-    color: #000000;
-
+  color: #000000;
 }
 
 #create-form button {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 14px 0px 0px 181px;
 
-    margin-top: 32px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 14px 0px 0px 181px;
+  position: absolute;
+  width: 462px;
+  height: 48px;
+  top: 649px;
 
-    position: absolute;
-    width: 462px;
-    height: 48px;
-    top: 609px;
-
-    background: #3F90FC;
+  background: #3f90fc;
 }
 
 #create-form h1 {
-    height: 21px;
-    left: 37.43%;
-    right: 37.36%;
-    margin-top: 15px;
+  height: 21px;
+  left: 37.43%;
+  right: 37.36%;
+  margin-top: 15px;
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 
-    color: #000000;
+  color: #000000;
 }
 
 #create-form img {
-    /* position: absolute; */
-    width: 31px;
-    height: 31.74px;
-    top: 396px;
+  /* position: absolute; */
+  width: 31px;
+  height: 31.74px;
+  top: 396px;
+}
+
+.form-control {
+  width: 462px;
 }

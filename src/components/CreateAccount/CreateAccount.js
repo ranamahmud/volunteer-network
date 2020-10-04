@@ -7,6 +7,41 @@ const CreateAccount = () => {
     const [loggedInUser, setLoggedInUser] = useState({});
     const [taskDate, setTaskDate] = useState(new Date());
 
+    const [user, setUser] = useState({
+        isSignedIn: false,
+        name: '',
+        email: '',
+        photo: '',
+        error: '',
+        success: false
+    })
+    const handleBlur = (e) => {
+        let isFieldValid = true;
+        if (e.target.id === "formBasicName") {
+            isFieldValid = e.target.value.trim().length > 0;
+        }
+
+        if (e.target.id === 'formBasicEmail') {
+            isFieldValid = /\S+@\S+\.\S+/.test(e.target.value);
+        }
+
+
+        if (e.target.id === "formBasicDescription") {
+            isFieldValid = e.target.value.trim().length > 0;
+        }
+
+        if (e.target.id === "formBasicTask") {
+            isFieldValid = e.target.value.trim().length > 0;
+        }
+
+        if (isFieldValid) {
+            const newUserInfo = { ...user };
+            newUserInfo[e.target.id] = e.target.value;
+            setUser(newUserInfo);
+            console.log(newUserInfo);
+        }
+
+    }
     return (
         <Container>
             <Row id="create-logo">
@@ -32,7 +67,7 @@ const CreateAccount = () => {
                         </Form.Group>
                         <Form.Group controlId="formBasicDate">
 
-                            <DatePicker selected={taskDate} onChange={date => setTaskDate(date)} />
+                            <DatePicker className="form-control" selected={taskDate} onChange={date => setTaskDate(date)} />
 
                         </Form.Group>
                         <Form.Group controlId="formBasicDescription">
