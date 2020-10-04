@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Container, Form, Image, Row } from 'react-bootstrap';
 import './CreateAccount.css'
+import DatePicker from 'react-datepicker'
 const CreateAccount = () => {
 
     const [loggedInUser, setLoggedInUser] = useState({});
+    const [taskDate, setTaskDate] = useState(new Date());
 
     return (
         <Container>
@@ -26,6 +28,11 @@ const CreateAccount = () => {
                         <Form.Group controlId="formBasicEmail">
 
                             <Form.Control type="email" placeholder="Username or Email" />
+
+                        </Form.Group>
+                        <Form.Group controlId="formBasicDate">
+
+                            <DatePicker selected={taskDate} onChange={date => setTaskDate(date)} />
 
                         </Form.Group>
                         <Form.Group controlId="formBasicDescription">
