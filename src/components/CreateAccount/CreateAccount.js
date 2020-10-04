@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Image } from 'react-bootstrap';
-import './Login.css'
-const Login = () => {
+const CreateAccount = () => {
     return (
         <Container>
             <Image id="login-logo" src={require("../../logos/Group 1329.png")} />
@@ -10,4 +9,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default CreateAccount;

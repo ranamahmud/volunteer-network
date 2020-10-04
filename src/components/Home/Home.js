@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container, Form, FormControl } from 'react-bootstrap';
 import EventHome from '../EventHome/EventHome';
+import Header from '../Header/Header';
 import Task from '../Task/Task';
 import './Home.css'
 const tasks = [
@@ -114,6 +115,7 @@ const tasks = [
 const Home = () => {
     return (
         <Container>
+            <Header />
             <Container>
                 <h1 id="home-title">I grow by helping people in need. </h1>
             </Container>
