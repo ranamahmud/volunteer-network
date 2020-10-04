@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Button, Container, Form, Image, Row } from 'react-bootstrap';
 import './CreateAccount.css'
 import DatePicker from 'react-datepicker'
+import { Link, useParams } from 'react-router-dom';
 const CreateAccount = () => {
-
+    const { key } = useParams()
+    console.log(key);
     const [loggedInUser, setLoggedInUser] = useState({});
     const [taskDate, setTaskDate] = useState(new Date());
 
@@ -47,8 +49,11 @@ const CreateAccount = () => {
     }
     return (
         <Container>
-            <Row id="create-logo">
-                <Image src={require("../../logos/Group 1329.png")} />
+            <Row>
+                <Link id="create-logo" to="/">
+                    <Image src={require("../../logos/Group 1329.png")} />
+
+                </Link>
             </Row>
             <Row id="create-form">
                 <Form onSubmit={handleSubmit}>

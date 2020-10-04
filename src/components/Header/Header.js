@@ -1,14 +1,16 @@
 import React from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Header.css';
 const Header = () => {
     return (
         <Container>
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">
-
-                    <Image id="logo" src={require("../../logos/Group 1329.png")} />
-                </Navbar.Brand>
+                {/* <Navbar.Brand href="#home">
+                    <Link to="/">
+                        <Image id="logo" src={require("../../logos/Group 1329.png")} />
+                    </Link>
+                </Navbar.Brand> */}
                 <Nav className="ml-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#features">Destination</Nav.Link>

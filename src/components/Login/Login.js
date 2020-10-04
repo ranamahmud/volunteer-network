@@ -5,7 +5,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../firebaseConfig';
 import { UserContext } from '../../App';
-import { useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 
 export const initializeLoginFramework = () => {
     if (firebase.apps.length === 0) {
@@ -14,6 +14,10 @@ export const initializeLoginFramework = () => {
 }
 
 const Login = () => {
+    let history = useHistory();
+    let location = useLocation();
+
+    let { from } = location.state || { from: { pathname: "/" } }
     const { productKey } = useParams();
 
     if (firebase.apps.length === 0) {
@@ -35,6 +39,8 @@ const Login = () => {
 
                 console.log(signedInUser)
                 setLoggedInUser(signedInUser);
+                console.log(from)
+                history.replace(from);
 
 
             })
