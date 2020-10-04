@@ -5,6 +5,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../firebaseConfig';
 import { UserContext } from '../../App';
+import { useParams } from 'react-router-dom';
 
 export const initializeLoginFramework = () => {
     if (firebase.apps.length === 0) {
@@ -13,6 +14,8 @@ export const initializeLoginFramework = () => {
 }
 
 const Login = () => {
+    const { productKey } = useParams();
+
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
     }

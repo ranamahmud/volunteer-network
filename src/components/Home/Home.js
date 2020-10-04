@@ -127,7 +127,7 @@ const Home = () => {
                 paddingTop: "200px"
             }}>
                 {
-                    tasks.map(task => <Task task={task}></Task>)
+                    tasks.map(task => <Task key={task.name} task={task}></Task>)
                 }
             </div>
         </Container>

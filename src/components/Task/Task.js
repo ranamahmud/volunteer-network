@@ -5,7 +5,7 @@ import './Task.css'
 const Task = ({ task }) => {
     return (
         <div className="col-md-3" style={{ paddingTop: "30px" }}>
-            <Link to={"/login/" + task.name}>
+            <Link to={"/create-account/" + task.name}>
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={require(`../../images/${task.pic}`)} />
                     <Card.Body style={{ backgroundColor: '#' + task.color }}>

@@ -18,7 +18,8 @@
 #create-form form {
     /* position: absolute; */
     width: 570px;
-    height: 457px;
+    height: 591px;
+
     padding-top: 154px;
     margin: 0 auto;
     background: #FFFFFF;
@@ -53,15 +54,19 @@
 }
 
 #create-form button {
-    width: 457px;
-    height: 51px;
-    left: 491px;
-    margin-top: 32px;
 
-    background: #FFFFFF;
-    border: 1px solid #C7C7C7;
-    box-sizing: border-box;
-    border-radius: 57px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 0px 0px 181px;
+
+    position: absolute;
+    width: 462px;
+    height: 48px;
+    top: 609px;
+
+    background: #3F90FC;
 }
 
 #create-form h1 {

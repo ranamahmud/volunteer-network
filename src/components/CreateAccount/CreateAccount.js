@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Form, Image, Row } from 'react-bootstrap';
 import './CreateAccount.css'
 const CreateAccount = () => {
+
+    const [loggedInUser, setLoggedInUser] = useState({});
+
     return (
         <Container>
             <Row id="create-logo">
@@ -14,21 +17,29 @@ const CreateAccount = () => {
                         <p>
                             Register as a Volunteer
     </p>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-    </Form.Text>
+                        <Form.Group controlId="formBasicName">
+
+                            <Form.Control type="text" placeholder="Full Name" />
+
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                        <Form.Group controlId="formBasicEmail">
+
+                            <Form.Control type="email" placeholder="Username or Email" />
+
                         </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
+                        <Form.Group controlId="formBasicDescription">
+
+                            <Form.Control type="email" placeholder="Description" />
+
                         </Form.Group>
+                        <Form.Group controlId="formBasicTask">
+
+                            <Form.Control type="email" placeholder="Organize books at the library." />
+
+                        </Form.Group>
+
+
                         <Button variant="primary" type="submit">
                             Submit
   </Button>
