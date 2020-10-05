@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <PrivateRoute path="/create-account/:key" component={CreateAccount} />
-          <Route path="/event-tasks/" component={EventTasks} />
+          <Route path="/event-tasks" component={EventTasks} />
           <Route path="/admin" component={Admin} />
           <Route path="/admin-add" component={AddAdmin} />
         </Switch>

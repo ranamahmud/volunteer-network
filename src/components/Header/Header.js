@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 const Header = () => {
     return (
-        <Container>
+        <Container id="header">
             <Navbar bg="light" variant="light">
-                {/* <Navbar.Brand href="#home">
+                <Navbar.Brand href="#home">
                     <Link to="/">
                         <Image id="logo" src={require("../../logos/Group 1329.png")} />
                     </Link>
-                </Navbar.Brand> */}
+                </Navbar.Brand>
                 <Nav className="ml-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#features">Destination</Nav.Link>

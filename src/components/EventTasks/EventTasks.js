@@ -1,11 +1,20 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import Event from '../Event/Event';
 import Header from '../Header/Header';
 
 const EventTasks = () => {
     return (
         <Container>
             <Header />
+            <div className="row">
+                <Event />
+                <Event />
+                <Event />
+                <Event />
+                <Event />
+                <Event />
+            </div>
         </Container>
     );
 };

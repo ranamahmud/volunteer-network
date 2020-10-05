@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form, Image, Row } from 'react-bootstrap';
 import './CreateAccount.css'
 import DatePicker from 'react-datepicker'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 const CreateAccount = (props) => {
+    const history = useHistory()
     const { name, color, pic } = props.location.state;
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
@@ -45,12 +46,18 @@ const CreateAccount = (props) => {
 
     }
     const handleAddActivity = (e) => {
+
         console.log(activity);
         fetch('http://localhost:5000/addActivity', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(activity),
         })
+            .then(res => {
+                console.log("success");
+                history.push('/event-tasks');
+            })
+        // history.push("/event-tasks")
         e.preventDefault();
     }
     return (
