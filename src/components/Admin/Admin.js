@@ -46,7 +46,7 @@ const Admin = () => {
 
                                     {
                                         events.map(event =>
-                                            <tr>
+                                            <tr key={event.id}>
                                                 <td>{event._id}</td>
                                                 <td>{event.userName}</td>
                                                 <td>{event.email}</td>
