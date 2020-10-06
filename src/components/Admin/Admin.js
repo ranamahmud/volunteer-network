@@ -10,6 +10,21 @@ const Admin = () => {
             .then(res => res.json())
             .then(data => setEvents(data));
     }, [])
+
+    const deleteEvent = (e, id) => {
+        e.persist();
+        console.log("button clicked")
+        fetch('https://vast-waters-59392.herokuapp.com/event/' + id, {
+            method: 'DELETE',
+        })
+            .then(res => res.json()) // or res.json()
+            .then(result => {
+                console.log(result);
+                if (result) {
+                    document.getElementById(id).style.display = "none";
+                }
+            })
+    }
     return (
         <div>
             <Container>
@@ -46,11 +61,12 @@ const Admin = () => {
 
                                     {
                                         events.map(event =>
-                                            <tr key={event.id}>
-                                                <td>{event._id}</td>
+                                            <tr id={event._id}>
                                                 <td>{event.userName}</td>
                                                 <td>{event.email}</td>
+                                                <td>{event.activityDate}</td>
                                                 <td>{event.name}</td>
+                                                <td><button onClick={() => deleteEvent(event._id)}>Delete</button></td>
                                             </tr>
                                         )
                                     }
@@ -62,7 +78,7 @@ const Admin = () => {
                     </Row>
                 </Container>
             </Container>
-        </div>
+        </div >
     );
 };
 
