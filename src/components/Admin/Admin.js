@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Image, Nav, Navbar, Row, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Admin = () => {
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        fetch('https://vast-waters-59392.herokuapp.com/getAllEvents/')
+            .then(res => res.json())
+            .then(data => setEvents(data));
+    }, [])
     return (
         <div>
             <Container>
@@ -36,23 +43,19 @@ const Admin = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td colSpan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
+
+                                    {
+                                        events.map(event =>
+                                            <tr>
+                                                <td>{event._id}</td>
+                                                <td>{event.userName}</td>
+                                                <td>{event.email}</td>
+                                                <td>{event.name}</td>
+                                            </tr>
+                                        )
+                                    }
+
+
                                 </tbody>
                             </Table>
                         </Col>

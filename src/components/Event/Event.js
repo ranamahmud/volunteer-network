@@ -5,7 +5,7 @@ const Event = ({ event }) => {
     const cancelEvent = (e, id) => {
         e.persist();
         console.log("button clicked")
-        fetch('http://localhost:5000/event/' + id, {
+        fetch('https://vast-waters-59392.herokuapp.com/event/' + id, {
             method: 'DELETE',
         })
             .then(res => res.json()) // or res.json()

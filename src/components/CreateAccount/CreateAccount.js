@@ -48,7 +48,7 @@ const CreateAccount = (props) => {
     const handleAddActivity = (e) => {
 
         console.log(activity);
-        fetch('http://localhost:5000/addActivity', {
+        fetch('https://vast-waters-59392.herokuapp.com/addActivity', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(activity),

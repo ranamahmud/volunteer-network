@@ -34,7 +34,8 @@ const Login = () => {
                     userName: displayName,
                     email: email,
                     photo: photoURL,
-                    success: true
+                    success: true,
+                    registrationDate: new Date(),
                 };
 
                 setLoggedInUser(signedInUser);

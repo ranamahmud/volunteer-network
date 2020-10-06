@@ -9,7 +9,7 @@ const EventTasks = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getEvents/' + loggedInUser.email)
+        fetch('https://vast-waters-59392.herokuapp.com/getEvents/' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setEvents(data));
     }, [loggedInUser.email])
