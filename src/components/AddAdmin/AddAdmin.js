@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker'
+import { UserContext } from '../../App';
 
 const AddAdmin = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     const [activityDate, setActivityDate] = useState(new Date());
-    const [activity, setActivity] = useState({});
+    const [activity, setActivity] = useState({
+        userName: loggedInUser.name,
+        email: loggedInUser.email,
+        activityDate: new Date()
+
+    });
 
     const handleBlur = (e) => {
         let isFieldValid = true;

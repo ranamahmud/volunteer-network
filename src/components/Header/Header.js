@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import './Header.css';
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     return (
         <Container id="header">
             <Navbar bg="light" variant="light">
@@ -17,6 +20,10 @@ const Header = () => {
 
                     <Button variant="primary" className="mr-sm-2" id="btn-search">Search</Button>
                     <Link to="/admin-view-event"> <Button variant="dark" className="mr-sm-2" id="btn-admin">Admin</Button></Link>
+                    {
+                        loggedInUser.email &&
+                        <p>{loggedInUser.userName}</p>
+                    }
                 </Nav>
 
             </Navbar>
