@@ -66,7 +66,7 @@ const Admin = () => {
                                                 <td>{event.email}</td>
                                                 <td>{event.activityDate}</td>
                                                 <td>{event.name}</td>
-                                                <td><button onClick={() => deleteEvent(event._id)}>Delete</button></td>
+                                                <td><button onClick={(e) => deleteEvent(e, event._id)}>Delete</button></td>
                                             </tr>
                                         )
                                     }
