@@ -37,7 +37,6 @@ const Login = () => {
                     success: true
                 };
 
-                console.log(signedInUser)
                 setLoggedInUser(signedInUser);
                 history.replace(from);
                 // history.push(path, [state])
@@ -46,7 +45,6 @@ const Login = () => {
 
             })
             .catch(err => {
-                console.log(err);
                 console.log(err.message);
             })
 

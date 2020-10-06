@@ -19,7 +19,7 @@ const EventTasks = () => {
             <Header />
             <div className="row">
                 {
-                    events.map(event => <Event event={event} />)
+                    events.map(event => <Event key={event._id} event={event} />)
                 }
             </div>
         </Container>
