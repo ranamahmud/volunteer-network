@@ -10,13 +10,13 @@ const Header = () => {
                     <Image id="logo" src={require("../../logos/Group 1329.png")} />
                 </Link>
                 <Nav className="ml-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Destination</Nav.Link>
-                    <Nav.Link href="#pricing">Events</Nav.Link>
-                    <Nav.Link href="#pricing">Blog</Nav.Link>
+                    <Link className="navbar-brand" to="/">Home</Link>
+                    <Link className="navbar-brand" to="#features">Destination</Link>
+                    <Link className="navbar-brand" to="/event-tasks">Events</Link>
+                    <Link className="navbar-brand" to="#pricing">Blog</Link>
 
                     <Button variant="primary" className="mr-sm-2" id="btn-search">Search</Button>
-                    <Button variant="dark" className="mr-sm-2" id="btn-admin">Admin</Button>
+                    <Link to="/admin-view-event"> <Button variant="dark" className="mr-sm-2" id="btn-admin">Admin</Button></Link>
                 </Nav>
 
             </Navbar>

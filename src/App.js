@@ -19,6 +19,7 @@ import EventTasks from './components/EventTasks/EventTasks';
 import Admin from './components/Admin/Admin';
 import AddAdmin from './components/AddAdmin/AddAdmin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import ViewAdmin from './components/ViewAdmin/ViewAdmin';
 export const UserContext = createContext();
 
 function App() {
@@ -31,9 +32,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <PrivateRoute path="/create-account/:key" component={CreateAccount} />
-          <Route path="/event-tasks" component={EventTasks} />
-          <Route path="/admin" component={Admin} />
-          <Route path="/admin-add" component={AddAdmin} />
+          <PrivateRoute path="/event-tasks" component={EventTasks} />
+          <Route path="/admin-view-event" component={Admin} />
+          <Route path="/admin-ad-event" component={AddAdmin} />
         </Switch>
       </Router>
     </UserContext.Provider>
