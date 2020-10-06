@@ -19,7 +19,7 @@ import EventTasks from './components/EventTasks/EventTasks';
 import Admin from './components/Admin/Admin';
 import AddAdmin from './components/AddAdmin/AddAdmin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import ViewAdmin from './components/ViewAdmin/ViewAdmin';
+
 export const UserContext = createContext();
 
 function App() {
